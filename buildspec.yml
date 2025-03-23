@@ -10,9 +10,9 @@ phases:
   build:
     commands:
       - cdk synth -o dist
-      - cdk deploy --require-approval never --capabilities CAPABILITY_NAMED_IAM CAPABILITY_IAM
-
+      - cdk deploy MyCdkProjectStack --require-approval never --capabilities CAPABILITY_NAMED_IAM CAPABILITY_IAM || exit 1
+      
 artifacts:
   files:
-    - "dist/MyCdkProjectStack.template.json"
+    - "**/*"
   name: BuildArtifact
