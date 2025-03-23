@@ -9,10 +9,10 @@ phases:
       - npm install
   build:
     commands:
-      - cdk synth > MyCdkProjectStack.template.json
+      - cdk synth -o dist
       - cdk deploy --require-approval never
 
 artifacts:
   files:
-    - MyCdkProjectStack.template.json
+    - "dist/MyCdkProjectStack.template.json"
   name: BuildArtifact
